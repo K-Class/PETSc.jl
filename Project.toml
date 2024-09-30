@@ -11,9 +11,9 @@ PETSc_jll = { git = "https://github.com/K-Class/PETSc_jll.jl.git", branch = "mai
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [compat]
-MPI = "0.15 - 0.20.22"
-PETSc_jll = "3.15.2 - 3.20.5+0"
-julia = "1 - 1.11.0"
+MPI = "0.15, 0.16, 0.17, 0.18, 0.19, 0.20.22"
+PETSc_jll = "3.15.2, 3.20.5"
+julia = "1.0 - 1.11"
 
 [extras]
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
