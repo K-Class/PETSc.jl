@@ -1,21 +1,28 @@
 module PETSc
+    """
+    PETSc wrapper for Julia.
+    Provides functionalities to use PETSc libraries in Julia code.
+    """
 
 using MPI, LinearAlgebra, SparseArrays
 
-MPI.Initialized() || MPI.Init()
+if !MPI.Initialized()
+    MPI.Init()
+end
 
 using Libdl
 
 function _petsc_link(fname)
-"""
-[`$fname`](https://petsc.org/release/docs/manualpages/$fname.html)
-"""
+    return """
+    [`$fname`](https://petsc.org/release/docs/manualpages/$fname.html)
+    """
 end
 
+
 function _doc_external(fname)
-"""
-- PETSc Manual: $(_petsc_link(fname))
-"""
+    return """
+    - PETSc Manual: $(_petsc_link(fname))
+    """
 end
 
 include("const.jl")
